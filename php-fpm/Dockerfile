@@ -28,6 +28,9 @@ RUN apt-get update -yqq && \
     apt-get install -y apt-utils && \
     pecl channel-update pecl.php.net
 
+RUN addgroup -gid 1000 vboxsf \
+    && adduser www-data vboxsf
+
 #
 #--------------------------------------------------------------------------
 # Mandatory Software's Installation
